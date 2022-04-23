@@ -1,5 +1,7 @@
 package shimkin.lab3;
 
+import java.util.List;
+
 /**
  * тестер производительности массивов List
  */
@@ -15,4 +17,17 @@ public class MyTester {
     }
 
     public MyTester(){}
+    
+    /**
+     * Тестирование добавления в середину
+     * @param list Контейнер
+     * @return Итоговое время
+     */
+    public long testAdd(List<Integer> list) {
+        long start = System.currentTimeMillis();
+        for(int k = 0; k<ops; ++k) {
+            list.add(list.size()/2, k);
+        }
+        return System.currentTimeMillis() - start;
+    }
 }
